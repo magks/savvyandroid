@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="dashboard_toolbar_ic_width">20</integer>
+
+    <integer name="dashboard_toolbar_ic_height">39</integer>
+    <integer name="dashboard_profile_width">20</integer>
+
+    <integer name="dashboard_profile_height">39</integer>
+
+</resources>
