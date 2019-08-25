@@ -1,4 +1,4 @@
-package com.magks.savvy_android.ViewModels
+package com.magks.savvy_android.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;

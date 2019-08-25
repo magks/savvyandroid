@@ -1,14 +1,14 @@
-package com.magks.savvy_android.Views
+package com.magks.savvy_android.views.ui.game
 
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.magks.savvy_android.R
-import com.magks.savvy_android.ViewModels.GameDashboardViewModel
+import com.magks.savvy_android.viewmodels.GameDashboardViewModel
 
 
 class GameDashboardFragment : androidx.fragment.app.Fragment() {
@@ -39,9 +39,11 @@ class GameDashboardFragment : androidx.fragment.app.Fragment() {
 
     // extensions
     private fun observeInput(gameDashboardViewModel: GameDashboardViewModel) {
+        Log.d(this.javaClass.simpleName, "observing playerlist")
         gameDashboardViewModel.playerList.observe(this, Observer {
             it?.let {
                 // do something with input
+                Log.d(this.javaClass.simpleName, GameDashboardFragment.toString())
             }
         })
     }

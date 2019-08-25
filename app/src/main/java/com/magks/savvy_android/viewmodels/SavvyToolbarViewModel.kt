@@ -1,11 +1,10 @@
-package com.magks.savvy_android.ViewModels
+package com.magks.savvy_android.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel;
-import com.magks.savvy_android.util.ObservableViewModel
 
-class ToolbarViewModel :ViewModel() {
+class SavvyToolbarViewModel :ViewModel() {
     private val _onProfileActivity =  MutableLiveData<Boolean>()
     val onProfileActivity : LiveData<Boolean> = _onProfileActivity
 

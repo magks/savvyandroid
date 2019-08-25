@@ -1,4 +1,4 @@
-package com.magks.savvy_android.Views
+package com.magks.savvy_android.views
 
 import android.content.Intent
 import androidx.lifecycle.ViewModelProviders
@@ -10,12 +10,12 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
 import com.magks.savvy_android.R
-import com.magks.savvy_android.ViewModels.ToolbarViewModel
-
+import com.magks.savvy_android.viewmodels.SavvyToolbarViewModel
+import com.magks.savvy_android.views.ui.MainActivity
+/*
 class ProfileActivity : AppCompatActivity() {
 
-
-    private lateinit var toolbarViewModel: ToolbarViewModel
+    private lateinit var savvyToolbarViewModel: SavvyToolbarViewModel
 
     override  fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +32,10 @@ class ProfileActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         // View Model: toolbar
-        toolbarViewModel = ViewModelProviders.of(this).get(ToolbarViewModel::class.java)
+        savvyToolbarViewModel = ViewModelProviders.of(this).get(SavvyToolbarViewModel::class.java)
 
         // Display
         setContentView(R.layout.activity_profile)
-
 
     }
 
@@ -61,7 +60,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         // Update toolbar: remove game dashboard button to make room for profile button
-        toolbarViewModel.isLeavingProfileActivity()
+        savvyToolbarViewModel.isLeavingProfileActivity()
         val toolbarGameIcon = findViewById<ImageView>(R.id.iconOnProfileBackArrowImageView)
         toolbarGameIcon.visibility = View.GONE
         toolbarGameIcon.setOnClickListener(null)
@@ -70,3 +69,11 @@ class ProfileActivity : AppCompatActivity() {
 
 
 }
+
+
+fun <T : View> View.bind(@IdRes res : Int) : Lazy<T> {
+    @Suppress("UNCHECKED_CAST")
+    return lazy(LazyThreadSafetyMode.NONE){ findViewById(res) as T }
+}
+
+*/

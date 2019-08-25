@@ -6,4 +6,8 @@
     <string name="settings">Settings</string>
     <string name="savvy_score">Savvy Score</string>
     <string name="_900">900</string>
+    <string name="profile_fragment_tag">PROFILE_FRAGMENT_TAG</string>
+    <string name="game_dashboard_tag">GAME_DASHBOARD_TAG</string>
+    <string name="matches_chat_fragment_tag">MATCHES_CHAT_FRAGMENT_TAG</string>
+
 </resources>
