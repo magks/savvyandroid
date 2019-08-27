@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/toolBarPlusCountdownBarHeight"
-    android:background="@color/colorGameDashboardBG"
-    android:tag="@string/game_dashboard_tag"
     tools:context=".views.ui.game.GameDashboardFragment"
-    tools:visibility="visible">
+    >
+    <data></data>
 
-    <ImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:tag="@string/game_dashboard_tag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/toolBarPlusCountdownBarHeight"
+        android:background="@color/colorGameDashboardBG"
+        >
+
+        <FrameLayout
+            android:id="@+id/countdown_timer_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+            <!--
+            app:layout_constraintTop_toBottomOf="@+id/game_dashboard_toolbar"
+            -->
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="20dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginTop="55dp"
+            android:text="1"
+            android:textColor="#ACACAC"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="166dp"
+            android:layout_marginTop="112dp"
+            android:text="2"
+            android:textColor="#ACACAC"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="255dp"
+            android:layout_marginTop="184dp"
+            android:text="3"
+            android:textColor="#ACACAC"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/greyHeartImageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="321dp"
+            android:layout_marginTop="236dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
         android:id="@+id/line1"
         android:layout_width="3dp"
         android:layout_height="565dp"
@@ -58,51 +118,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="20dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="55dp"
-        android:text="1"
-        android:textColor="#ACACAC"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="112dp"
-        android:text="2"
-        android:textColor="#ACACAC"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="184dp"
-        android:text="3"
-        android:textColor="#ACACAC"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/greyHeartImageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="321dp"
-        android:layout_marginTop="236dp"
-        android:src="@drawable/ic_heart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/col0ConstraintLayout"
@@ -394,5 +409,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="66dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout><!--
-        -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- -->
+</layout>

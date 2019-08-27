@@ -3,12 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
-        <import type="com.magks.savvy_android.viewmodels.SavvyToolbarViewModel" />
-        <variable name="onProfileActivity" type="Boolean"/>
     </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -47,10 +43,10 @@
          -->
         <androidx.appcompat.widget.Toolbar android:id="@+id/game_dashboard_toolbar"
             android:layout_width="fill_parent"
-            android:layout_height="85dp"
+            android:layout_height="100dp"
             android:background="#FFFFFF"
             android:minHeight="?attr/actionBarSize"
-            android:paddingTop="15dp"
+            android:paddingTop="25dp"
             android:theme="?attr/actionBarTheme"
             app:layout_constraintLeft_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -120,12 +116,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
-        <FrameLayout android:id="@+id/countdown_timer_frame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/game_dashboard_toolbar"
-            />
 
         <View
             android:id="@+id/divider"
@@ -133,7 +123,7 @@
             android:layout_height="3dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/colorGameDashboardBG"
+            android:background="#D2E2DBDB"
             android:foregroundGravity="center"
             app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
             app:layout_constraintStart_toStartOf="parent"

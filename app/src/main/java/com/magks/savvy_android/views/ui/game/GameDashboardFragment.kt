@@ -33,6 +33,7 @@ class GameDashboardFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //val activity = activity?: return
         activity?.let {
+            Log.d(this.javaClass.simpleName, "let game dash fragment activity...")
             addCountdownTimerFragment()
             gameDashboardViewModel = ViewModelProviders.of(it).get(GameDashboardViewModel::class.java)
             observeInput(gameDashboardViewModel)
@@ -42,9 +43,7 @@ class GameDashboardFragment : Fragment() {
     }
 
     private fun addCountdownTimerFragment() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         val childFragMan = childFragmentManager
-
         val childFragTrans = childFragMan.beginTransaction()
         val fragB = CountdownTimerFragment()
         childFragTrans.replace(R.id.countdown_timer_frame, fragB, resources.getString(R.string.countdown_timer_fragment_tag))
