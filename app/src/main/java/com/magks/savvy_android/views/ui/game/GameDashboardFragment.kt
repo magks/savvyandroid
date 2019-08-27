@@ -7,11 +7,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.magks.savvy_android.R
 import com.magks.savvy_android.viewmodels.GameDashboardViewModel
 
 
-class GameDashboardFragment : androidx.fragment.app.Fragment() {
+
+
+class GameDashboardFragment : Fragment() {
 
     companion object {
         fun newInstance() = GameDashboardFragment()
@@ -23,18 +26,29 @@ class GameDashboardFragment : androidx.fragment.app.Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.game_dashboard_fragment, container, false)
+        return inflater.inflate(com.magks.savvy_android.R.layout.game_dashboard_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         //val activity = activity?: return
         activity?.let {
+            addCountdownTimerFragment()
             gameDashboardViewModel = ViewModelProviders.of(it).get(GameDashboardViewModel::class.java)
             observeInput(gameDashboardViewModel)
         }
         //viewModel = getViewModel<GameDashboardViewModel>(viewLifecycleOwner)//ViewModelProviders.of(this).get(GameDashboardViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    private fun addCountdownTimerFragment() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val childFragMan = childFragmentManager
+
+        val childFragTrans = childFragMan.beginTransaction()
+        val fragB = CountdownTimerFragment()
+        childFragTrans.replace(R.id.countdown_timer_frame, fragB, resources.getString(R.string.countdown_timer_fragment_tag))
+        childFragTrans.commit()
     }
 
     // extensions

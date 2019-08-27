@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.ui.help.DashboardHelpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/toolBarPlusCountdownBarHeight" >
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/dashboard_help_image_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:contentDescription="@string/app_name"
+            android:contextClickable="true"
+            android:padding="10dp"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/dashboard_help_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="24dp"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

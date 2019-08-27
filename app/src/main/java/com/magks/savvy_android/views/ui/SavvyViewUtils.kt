@@ -17,6 +17,8 @@ import java.lang.reflect.Constructor
 import kotlin.reflect.KFunction
 import kotlin.reflect.jvm.javaConstructor
 
+
+
 fun <T : View> View.unsafe_bind(@IdRes idRes: Int): Lazy<T> {
     @Suppress("UNCHECKED_CAST")
     return SavvyViewUtils.unsafeLazy { findViewById(idRes) as T }

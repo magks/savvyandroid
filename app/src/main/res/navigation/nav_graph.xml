@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gameDashboardFragment">
+
+    <fragment
+        android:id="@+id/gameDashboardFragment"
+        android:name="com.magks.savvy_android.views.ui.game.GameDashboardFragment"
+        android:label="game_dashboard_fragment"
+        tools:layout="@layout/game_dashboard_fragment" >
+        <action
+            android:id="@+id/action_gameDashboardFragment_to_placeholder4"
+            app:destination="@id/placeholder4" />
+    </fragment>
+    <fragment
+        android:id="@+id/matchesChatFragment"
+        android:name="com.magks.savvy_android.views.ui.matches.MatchesChatFragment"
+        android:label="matches_chat_fragment"
+        tools:layout="@layout/matches_chat_fragment" >
+        <action
+            android:id="@+id/action_matchesChatFragment_to_placeholder"
+            app:destination="@id/placeholder" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.magks.savvy_android.views.ui.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_placeholder2"
+            app:destination="@id/placeholder2" />
+        <action
+            android:id="@+id/action_profileFragment_to_placeholder3"
+            app:destination="@id/placeholder3" />
+    </fragment>
+    <fragment android:id="@+id/placeholder" />
+    <fragment android:id="@+id/placeholder2" />
+    <fragment android:id="@+id/placeholder3" />
+    <fragment android:id="@+id/placeholder4" />
+    <action
+        android:id="@+id/action_global_gameDashboardFragment"
+        app:destination="@id/gameDashboardFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:launchSingleTop="true" />
+    <action
+        android:id="@+id/action_global_profileFragment"
+        app:destination="@id/profileFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:launchSingleTop="true" />
+    <action
+        android:id="@+id/action_global_matchesChatFragment"
+        app:destination="@id/matchesChatFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:launchSingleTop="true" />
+    <fragment
+        android:id="@+id/dashboardHelpFragment"
+        android:name="com.magks.savvy_android.views.ui.help.DashboardHelpFragment"
+        android:label="dashboard_help_fragment"
+        tools:layout="@layout/dashboard_help_fragment" />
+    <action
+        android:id="@+id/action_global_dashboardHelpFragment"
+        app:destination="@id/dashboardHelpFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:launchSingleTop="true" />
+</navigation>

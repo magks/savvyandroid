@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFFFFF</color> <!-- Is a tinted white preferred? -->
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPureWhite">#FFFFFF</color>
 
-    <color name="colorPrimaryGame">#F5F5F5</color> <!-- Is a tinted white preferred? -->
+    <color name="colorGameDashboardBG">#FCFBFA</color>
+    <color name="colorGameDashboardGreyHex">#E6E6E6</color>
+    <color name="colorGameDashboardGreyLine">#E6E6E6</color>
+    <color name="colorGameDashboardGreyNumber">#ACACAC</color>
+
+    <color name="colorPrimaryPink">#F4538B</color>
 
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorPink">#f4538b</color>
     <color name="colorLightGray">#808065</color>
 
 </resources>

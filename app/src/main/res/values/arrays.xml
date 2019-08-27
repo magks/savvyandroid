@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dashboard Help -->
+    <string-array name="DashboardHelpInfo">
+        <item>You can invite up to three friends to play with you</item>
+        <item>If you are having trouble finding a game, try increasing your mile radius</item>
+        <item>Failure to respond to a question will result in an automated answer</item>
+        <item>The game automatically starts once the fourth man joins.</item>
+    </string-array>
+
+    <integer-array name="DashboardHelpIcons">
+        <item>@drawable/ic_friends</item>
+        <item>@drawable/ic_location</item>
+        <item>@drawable/ic_robot</item>
+        <item>@drawable/ic_game</item>
+    </integer-array>
+</resources>

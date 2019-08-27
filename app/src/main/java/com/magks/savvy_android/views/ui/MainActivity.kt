@@ -9,19 +9,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavig
 
 import android.view.Window
 import android.view.WindowManager
+import androidx.navigation.findNavController
 import com.magks.savvy_android.R
+import com.magks.savvy_android.R.id.nav_host_fragment
 import com.magks.savvy_android.databinding.ActivityMainBinding
-import com.magks.savvy_android.views.ui.game.GameDashboardFragment
+import com.magks.savvy_android.views.ui.topbar.SavvyToolbarView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mSavvyToolbar : SavvyToolbarView
-    private lateinit var gameDashboardFragmentTag : String
-    private lateinit var profileFragmentTag : String
-    var mGameDashboardFragment: GameDashboardFragment? = null
 
     private val onNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_dashboard_help -> {
+                findNavController(nav_host_fragment).navigate(R.id.action_global_dashboardHelpFragment)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -42,25 +42,19 @@ class MainActivity : AppCompatActivity() {
         // Hide default actionbar
        // supportActionBar?.hide()
 
+        // Navigation
+
         // Bottom Nav
+
         val navView = findViewById<BottomNavigationView>(R.id.nav_view)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
         //Toolbar
-        mSavvyToolbar = SavvyToolbarView(applicationContext, this, supportFragmentManager)
-
-        // Initialize fragment tags
-        gameDashboardFragmentTag = resources.getString(R.string.game_dashboard_tag)
-        profileFragmentTag = resources.getString(R.string.profile_fragment_tag)
-
-        // Show game dashboard fragment
-        mGameDashboardFragment = GameDashboardFragment()
-        supportFragmentManager.addOnBackStackChangedListener {
-            if (supportFragmentManager.backStackEntryCount < 0)
-                finish()
-        }
-        SavvyViewUtils.presentFragment(supportFragmentManager, gameDashboardFragmentTag, mGameDashboardFragment!!, addBackStack = false)
-        mSavvyToolbar.disableButton(mSavvyToolbar.savvyLogoImageView)
+        mSavvyToolbar = SavvyToolbarView(
+            this,
+            applicationContext,
+            findNavController(nav_host_fragment)
+        )
     }
 
 }

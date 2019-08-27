@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/toolBarPlusCountdownBarHeight"
+    android:background="@color/colorPrimaryGame"
+    android:tag="@string/game_dashboard_tag"
+    tools:context=".views.ui.game.GameDashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/col0ConstraintLayout"
+        android:layout_width="112dp"
+        android:layout_height="428dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/col1ConstraintLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/column_zero" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/col1ConstraintLayout"
+        android:layout_width="77dp"
+        android:layout_height="366dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/col2ConstraintLayout"
+        android:layout_width="81dp"
+        android:layout_height="255dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="224dp"
+        app:layout_constraintEnd_toStartOf="@+id/col3ConstraintLayout"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toEndOf="@+id/col1ConstraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="83dp"
+            android:layout_height="104dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/polygon_copy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="81dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/polygon_copy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/col3ConstraintLayout"
+        android:layout_width="96dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginTop="280dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/col2ConstraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton10"
+            android:layout_width="93dp"
+            android:layout_height="107dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/polygon_copy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="20dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="56dp"
+        android:text="1"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="21dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="8dp"
+        android:text="2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/col1ConstraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="21dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="16dp"
+        android:text="3"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="28dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginTop="204dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="64dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--
+        <include layout="@layout/column_one" />
+        <include layout="@layout/column_two" />
+        <include layout="@layout/column_three" />
+        -->

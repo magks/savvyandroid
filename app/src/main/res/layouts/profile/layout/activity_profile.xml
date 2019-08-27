@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_dashboard"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@+id/profilepicImgView"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/profilepicImgView"
+            android:layout_width="206dp"
+            android:layout_height="178dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_dashboard_toolbar"
+            app:srcCompat="@drawable/user_default_icon" />
+
+        <TextView
+            android:id="@+id/usernameTV"
+            android:layout_width="220dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="UserName888"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilepicImgView" />
+
+        <TextView
+            android:id="@+id/savvyScoreDisplayTV"
+            android:layout_width="35dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="36dp"
+            android:text="@string/_900"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameTV" />
+
+        <TextView
+            android:id="@+id/savvyScoreCaptionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/savvy_score"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toBottomOf="@+id/savvyScoreDisplayTV" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/savvyScoreCaptionTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/savvyScoreDisplayTV" />
+
+        <ImageButton
+            android:id="@+id/imageButton11"
+            android:layout_width="58dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#00FFFFFF"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageButton12"
+            app:layout_constraintTop_toBottomOf="@+id/usernameTV"
+            app:srcCompat="@drawable/ic_edit_profile" />
+
+        <ImageButton
+            android:id="@+id/imageButton12"
+            android:layout_width="58dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#00FFFFFF"
+            android:cropToPadding="false"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toEndOf="@+id/savvyScoreDisplayTV"
+            app:layout_constraintTop_toBottomOf="@+id/usernameTV"
+            app:srcCompat="@drawable/ic_settings" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:text="@string/settings"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/editProfileCaptionTV"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton12" />
+
+        <TextView
+            android:id="@+id/editProfileCaptionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:text="@string/edit_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton11" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

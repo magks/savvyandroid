@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.magks.savvy_android.viewmodels.SavvyToolbarViewModel" />
+        <variable name="onProfileActivity" type="Boolean"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ui.MainActivity">
+
+        <fragment
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:navGraph="@navigation/nav_graph" />
+
+        <!--
+        <include layout="@layout/toolbar_dashboard" />
+        -->
+
+        <!-- Current the other fragments must manually account for
+             the toolbar height (plus the to-be-implemented countdown bar
+             with a hardcoded dimens resource value.
+
+             possible solutions to try to improve this situation:
+             1. Perhaps including this toolbar_dashboard and the countdown layout
+                directly in the fragments' xml and using constraints appropriately
+             2. Calculate and set the margins programmatically in the view (MainActivity?) itself
+                and/or via databinding:
+                i. data binding
+                ii. MainActivity
+         -->
+        <androidx.appcompat.widget.Toolbar android:id="@+id/game_dashboard_toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="85dp"
+            android:background="#FFFFFF"
+            android:minHeight="?attr/actionBarSize"
+            android:paddingTop="15dp"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/toolbar_constraint_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profileIconImageView"
+                    android:layout_width="@dimen/dashboard_toolbar_ic_width"
+                    android:layout_height="@dimen/dashboard_toolbar_ic_height"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/savvyLogoActiveImageView"
+                    app:layout_constraintEnd_toStartOf="@+id/savvyLogoActiveImageView"
+                    app:layout_constraintHorizontal_bias="0.047"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_profile" />
+                <!-- app:goneUnless="@{!onProfileActivity}"/> -->
+                <!-- android:onClick="startProfileActivity" -->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iconOnProfileBackArrowImageView"
+                    android:layout_width="@dimen/dashboard_toolbar_ic_width"
+                    android:layout_height="@dimen/dashboard_toolbar_ic_height"
+                    android:layout_gravity="left"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="false"
+                    android:visibility="gone"
+                    app:layout_constraintHorizontal_bias="0.047"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:srcCompat="@drawable/ic_action_name" />
+                <!-- android:onClick="startMainActivity" -->
+                <!-- app:goneUnless="@{onProfileActivity}"/> -->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/savvyLogoActiveImageView"
+                    android:layout_width="@dimen/dashboard_toolbar_ic_width"
+                    android:layout_height="@dimen/dashboard_toolbar_ic_height"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="140dp"
+                    app:layout_constraintEnd_toStartOf="@+id/chatIconImageView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_logo_active" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/chatIconImageView"
+                    android:layout_width="@dimen/dashboard_toolbar_ic_width"
+                    android:layout_height="@dimen/dashboard_toolbar_ic_height"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_chat" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout android:id="@+id/countdown_timer_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_dashboard_toolbar"
+            />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="350dp"
+            android:layout_height="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/colorGameDashboardBG"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/game_dashboard_toolbar" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            app:itemIconTint="#062521"
+            app:itemTextColor="#808065"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

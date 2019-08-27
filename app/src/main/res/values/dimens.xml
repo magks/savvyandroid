@@ -5,4 +5,6 @@
 
     <dimen name="dashboard_toolbar_ic_width">20dp</dimen>
     <dimen name="dashboard_toolbar_ic_height">25dp</dimen>
+    <dimen name="toolBarPlusCountdownBarHeight">75dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

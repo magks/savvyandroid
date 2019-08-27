@@ -26,6 +26,21 @@ android {
     dataBinding {
         enabled = true
     }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/game',
+                            'src/main/res/layouts/help',
+                            'src/main/res/layouts/matches',
+                            'src/main/res/layouts/profile',
+                            'src/main/res/layouts/savvy',
+                            'src/main/res/layouts/toolbar',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
 }
 
 dependencies {
@@ -48,6 +63,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
     annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
